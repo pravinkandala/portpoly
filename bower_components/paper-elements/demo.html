@@ -1,0 +1,137 @@
+<!doctype html>
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE
+The complete set of authors may be found at http://polymer.github.io/AUTHORS
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS
+-->
+<html>
+  <head>
+    <title>Nagashree Bhat</title>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="../platform/platform.js"></script>
+    
+    <link rel="shortcut icon" href="http://www.polymer-project.org/images/logos/p-logo-16.png">
+
+    <link rel="import" href="../core-icons/core-icons.html">
+    <link rel="import" href="../sampler-scaffold/sampler-scaffold.html">
+    <link rel="import" href="../font-roboto/roboto.html">
+    <link rel="import" href="../core-item/core-item.html">
+    <link rel="import" href="../core-menu/core-submenu.html">
+    <link rel="import" href="../paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="../paper-fab/paper-fab.html">
+	<link rel="import" href="../core-icons/social-icons.html">
+
+    <style>
+
+      body {
+        font-family: RobotoDraft, sans-serif;
+        color: #333;
+        margin: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+      }
+	  
+	   sampler-scaffold::shadow [main] core-toolbar {
+        background-color: #333399;
+        color: #000;
+      }
+      
+      sampler-scaffold::shadow [drawer] core-toolbar {
+        background-color: #000066;
+        color: #fff;
+      }
+      
+      sampler-scaffold::shadow #card.move-up {
+        transition: 0.38s -webkit-transform cubic-bezier(0.4, 0.0, 0.2, 1);
+        transition: 0.38s transform cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      
+      sampler-scaffold::shadow #card {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      sampler-scaffold::shadow #card:hover {
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+      }
+      
+      sampler-scaffold::shadow paper-fab.action-button {
+        position: absolute;
+        right: 14px;
+        bottom: -28px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        background-color: #12c700 !important;
+        transition: all 0.25s;
+      }
+      
+      sampler-scaffold::shadow .action-button:hover:not(:active) {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+   //     background-color: #3d5afe !important;
+      }
+      
+      sampler-scaffold::shadow core-item core-icon {
+      		fill: #B84D70;
+      }
+      
+      
+    </style>
+
+  </head>
+
+  <body unresolved>
+ 
+  
+
+    <sampler-scaffold label="Nagashree Bhat" fit>
+
+      <paper-icon-button class="menuButton" icon="menu" ></paper-icon-button>
+      <paper-fab class="sourceButton bottom" icon="launch"></paper-fab>
+    
+      <core-item label="About me" tag="paper-checkbox" url="../paper-checkbox/demo.html" icon="home"></core-item>
+	  
+	  <core-submenu label="Projects" icon="expand-more" tag="case-studies" url="../components/material-playground-master/">
+    				<core-item label="Academic Project" url="../components/dom-app-social/index.html" tag="app-social"></core-item>
+    				<core-item label="Work Accomplishment" url="../components/dom-app-social/demo.html" tag="app-social"></core-item>
+    		</core-submenu>	
+	             
+    <!--   <core-item label="Projects" icon="work" tag="paper-dialog" url="../paper-dialog/demo.html"></core-item> -->
+
+	  <core-item label="Achievements" icon="list" tag="paper-menu-button" url="../paper-menu-button/demo.html"></core-item>
+	  
+	  <core-item label="Workshops attended" tag="paper-item" url="../paper-item/demo.html" icon="label-outline"></core-item>
+	  
+
+	  
+	  <core-item label="Resume/CV" icon="drive" tag="paper-progress" url="../paper-progress/demo.html"></core-item>
+	  
+	   <core-item label="Connect with me " icon="mail" tag="paper-button" url="../paper-button/demo.html" "></core-item>
+	  
+
+      
+    </sampler-scaffold>
+
+  
+  <script>
+    // Analytics for pp.org
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39334307-1', 'auto');
+    ga('send', 'pageview');
+  </script>  
+  </body>
+
+</html>

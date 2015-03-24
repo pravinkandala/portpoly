@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <title>paper-progress</title>
+  
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <script src="../platform/platform.js"></script>
+  
+  <link rel="import" href="paper-progress.html">
+  <link rel="import" href="../paper-button/paper-button.html">
+  
+  <style shim-shadowdom>
+  
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      padding: 24px;
+    }
+    
+    paper-progress {
+      display: block;
+	  background-color: #FFED08;
+      width: 80%;
+      padding: 25px 1;
+    }
+	
+	paper-progress.yellow::shadow #activeProgress {
+      background-color: #FFFF09;
+    }
+    
+    paper-progress.yellow::shadow #secondaryProgress {
+      background-color: #FFFF57;
+    }
+	
+	paper-progress.green::shadow #activeProgress {
+      background-color: #FF0021;
+    }
+    
+    paper-progress.green::shadow #secondaryProgress {
+      background-color: #1ACC10;
+    }
+	
+	paper-progress.gre::shadow #activeProgress {
+      background-color: #51CC10;
+    }
+    
+    paper-progress.gre::shadow #secondaryProgress {
+      background-color: #FF3821;
+    }
+    
+    paper-progress.pink::shadow #activeProgress {
+      background-color: #2E13F5;
+    }
+    
+    paper-progress.pink::shadow #secondaryProgress {
+      background-color: #2ECBF5;
+    }
+	
+	 paper-progress.purple::shadow #activeProgress {
+      background-color: #7D077F;
+    }
+    
+    paper-progress.purple::shadow #secondaryProgress {
+      background-color: #D90CDE;
+    }
+    
+		 paper-progress.cyan::shadow #activeProgress {
+      background-color: #0D7F75;
+    }
+    
+    paper-progress.cyan::shadow #secondaryProgress {
+      background-color: #0CDECA;
+    }
+    
+  </style>
+  
+</head>
+<body unresolved>
+
+  <h3>JAVA</h3>
+  <!-- <paper-progress  class"yellow" value="40" secondaryProgress="40"></paper-progress><br> -->
+     <paper-progress class="cyan" value="80" secondaryProgress="60"></paper-progress>
+  <h3>HTML 5</h3>
+  <!-- <paper-progress class"purple" value="200" max="150"></paper-progress><br> -->
+  <paper-progress class="purple" value="70" secondaryProgress="0"></paper-progress>
+  <h3>Python</h3>
+  <paper-progress class="pink" value="40"></paper-progress><br>
+  <h3>C / C++</h3>
+  <paper-progress class="yellow" value="60" secondaryProgress="60"></paper-progress>
+  <h3>C#</h3>
+   <paper-progress class="green" value="100" secondaryProgress="80"></paper-progress>
+  <h3>Polymer</h3>
+   <paper-progress class="gre" value="20" secondaryProgress="20"></paper-progress>
+  
+  <script>
+    
+    var progress = document.querySelector('paper-progress');
+    var button = document.querySelector('paper-button');
+    
+    var repeat, maxRepeat = 5, animating = false;
+    
+    function nextProgress() {
+      animating = true;
+      if (progress.value < progress.max) {
+        progress.value += (progress.step || 1);
+      } else {
+        if (++repeat >= maxRepeat) {
+          animating = false;
+          button.disabled = false;
+          return;
+        }
+        progress.value = progress.min;
+      }
+      progress.async(nextProgress);
+    }
+    
+    function startProgress() {
+      repeat = 0;
+      progress.value = progress.min;
+      button.disabled = true;
+      if (!animating) {
+        nextProgress();
+      }
+    }
+    
+    addEventListener('polymer-ready', function() {
+      startProgress();
+    });
+    
+  </script>
+  
+</body>
+</html>
